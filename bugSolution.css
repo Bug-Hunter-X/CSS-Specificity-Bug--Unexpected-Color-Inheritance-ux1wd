@@ -1,0 +1,25 @@
+To consistently ensure the `color: blue` rule takes precedence, you can use the `!important` flag or increase the specificity of the selector.  However, overusing `!important` should be avoided.  Here's how to solve it with improved selector specificity:
+
+```css
+div.container p {
+  color: blue !important; 
+}
+
+div p {
+  color: red;
+}
+```
+
+OR a more robust solution without `!important`:
+
+```css
+.container p {
+  color: blue;
+}
+
+div p {
+  color: red;
+}
+```
+
+By making the selector for the blue color more specific (removing the 'div' from the first selector, but using a class instead of a div), it prevents conflicting specificity issues with the less specific selector.
