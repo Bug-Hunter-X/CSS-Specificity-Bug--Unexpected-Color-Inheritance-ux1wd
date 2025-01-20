@@ -1,0 +1,13 @@
+The following CSS code snippet exhibits unexpected behavior in some browsers due to an uncommon specificity issue:
+
+```css
+div.container p {
+  color: blue;
+}
+
+div p {
+  color: red;
+}
+```
+
+The expectation might be that the more specific selector `div.container p` should override `div p`, resulting in text within a paragraph within a div with the class "container" to appear blue. However, depending on the browser and the order of the CSS declarations, this isn't always the case.  Sometimes, the browser might apply the `color: red` rule due to the way specificity is calculated.
